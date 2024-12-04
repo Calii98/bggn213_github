@@ -1,2 +1,4 @@
 # BGGN213
-My classwork from BGGN213 at UC San Diego which was great!
+
+My classwork from [BGGN213](https://bioboot.github.io/bggn213_F24/) at UC San Diego at Fall 24.
+
