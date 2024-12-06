@@ -1,41 +1,53 @@
----
-title: "class06"
-username: caliope marin
-format: gfm
----
+# class06
+
 
 MY first function :-)
 
-```{r}
+``` r
 ADD <- function(x, y=1) {
   x+y
 }
 ```
- 
+
 Can I just use it?
 
-```{r}
+``` r
 ADD(13, 17)
+```
+
+    [1] 30
+
+``` r
 ADD(x=1, y=100)
+```
+
+    [1] 101
+
+``` r
 ADD(c(100, 1, 100), 1)
 ```
-```{r}
+
+    [1] 101   2 101
+
+``` r
 ADD(10)
 ```
 
-# A second function 
+    [1] 11
 
-Let's try something more interesting
+# A second function
 
-```{r}
+Let’s try something more interesting
+
+``` r
 #generate_DNA <- function() {
 bases <- c("A", "T", "C", "G")
 sequence <- sample(bases, size=10, replace=TRUE, prob=NULL)
 ```
 
-That is my wee working snippet, now, I can make it into a function. 
+That is my wee working snippet, now, I can make it into a function.
 
-```{r}
+``` r
 generate_DNA <- function(length){
   bases <- c("A", "T", "C", "G")
   sequence <- sample(bases, size=length,
@@ -44,19 +56,22 @@ generate_DNA <- function(length){
 }
 ```
 
-```{r}
+``` r
 generate_DNA(length=10)
 ```
 
-```{r}
+     [1] "T" "T" "A" "C" "A" "A" "T" "T" "T" "G"
+
+``` r
 aa <- unique(bio3d::aa.table$aa1)[1:20]
 sequence <- sample(aa, size=10, replace=TRUE, prob=NULL)
 ```
+
 Theres diff chemistry of repeat amino acids
 
 Generate a protein sequence with 10 amino acids.
 
-```{r}
+``` r
 generate_prot <- function(length){
   aa <- unique(bio3d::aa.table$aa1)[1:20]
   sequence <-sample(aa, size=length, replace=TRUE, prob=NULL)
@@ -64,22 +79,39 @@ sequence <- paste(sequence, collapse = "") #make the string a phrase without any
   return(sequence)
 
 }
-
-
 ```
+
 Generate random protein sequences of length 6 to 12
 
-```{r}
+``` r
 answer <- sapply(6:12, generate_prot)
 answer
 ```
 
-```{r}
+    [1] "GSNYAH"       "SMCHQLN"      "GYGEVMHG"     "CEQLIAEIT"    "WHHPHHIKSP"  
+    [6] "PWQVVSDSTIS"  "IFSPKEMHAHGP"
+
+``` r
 paste(c("barry", "alice", "amy", "chandra"), "loves R",sep="")
 ```
 
-```{r}
-cat(paste(">id.", 6:12, "\n", answer, sep=""), sep="\n")
+    [1] "barryloves R"   "aliceloves R"   "amyloves R"     "chandraloves R"
 
+``` r
+cat(paste(">id.", 6:12, "\n", answer, sep=""), sep="\n")
 ```
 
+    >id.6
+    GSNYAH
+    >id.7
+    SMCHQLN
+    >id.8
+    GYGEVMHG
+    >id.9
+    CEQLIAEIT
+    >id.10
+    WHHPHHIKSP
+    >id.11
+    PWQVVSDSTIS
+    >id.12
+    IFSPKEMHAHGP
